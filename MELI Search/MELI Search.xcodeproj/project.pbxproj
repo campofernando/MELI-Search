@@ -13,9 +13,12 @@
 		EDE13A652C214B0300974183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A642C214B0300974183 /* ContentView.swift */; };
 		EDE13A672C214B0400974183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE13A662C214B0400974183 /* Assets.xcassets */; };
 		EDE13A6B2C214B0400974183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE13A6A2C214B0400974183 /* Preview Assets.xcassets */; };
-		EDE13A752C214B0400974183 /* MELI_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A742C214B0400974183 /* MELI_SearchTests.swift */; };
 		EDE13A7F2C214B0400974183 /* MELI_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A7E2C214B0400974183 /* MELI_SearchUITests.swift */; };
 		EDE13A812C214B0400974183 /* MELI_SearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A802C214B0400974183 /* MELI_SearchUITestsLaunchTests.swift */; };
+		EDE13A902C22415900974183 /* MeliBRApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A8E2C22415900974183 /* MeliBRApiHelper.swift */; };
+		EDE13A962C2241BE00974183 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A952C2241BE00974183 /* HttpClient.swift */; };
+		EDE13A9A2C2241EB00974183 /* WhenRequestedItemsFromSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A982C2241EB00974183 /* WhenRequestedItemsFromSearch.swift */; };
+		EDE13A9B2C2241EB00974183 /* WhenRequestedItemsFromCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +48,13 @@
 		EDE13A682C214B0400974183 /* MELI_Search.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MELI_Search.entitlements; sourceTree = "<group>"; };
 		EDE13A6A2C214B0400974183 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDE13A702C214B0400974183 /* MELI SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MELI SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDE13A742C214B0400974183 /* MELI_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MELI_SearchTests.swift; sourceTree = "<group>"; };
 		EDE13A7A2C214B0400974183 /* MELI SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MELI SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE13A7E2C214B0400974183 /* MELI_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MELI_SearchUITests.swift; sourceTree = "<group>"; };
 		EDE13A802C214B0400974183 /* MELI_SearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MELI_SearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDE13A8E2C22415900974183 /* MeliBRApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeliBRApiHelper.swift; sourceTree = "<group>"; };
+		EDE13A952C2241BE00974183 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		EDE13A982C2241EB00974183 /* WhenRequestedItemsFromSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhenRequestedItemsFromSearch.swift; sourceTree = "<group>"; };
+		EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhenRequestedItemsFromCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		EDE13A5C2C214B0300974183 /* MELI Search */ = {
 			isa = PBXGroup;
 			children = (
+				EDE13A942C2241BE00974183 /* Rest */,
+				EDE13A8D2C22415900974183 /* Business */,
 				EDE13A5D2C214B0300974183 /* MELI_SearchApp.swift */,
 				EDE13A5F2C214B0300974183 /* Persistence.swift */,
 				EDE13A642C214B0300974183 /* ContentView.swift */,
@@ -121,7 +129,7 @@
 		EDE13A732C214B0400974183 /* MELI SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDE13A742C214B0400974183 /* MELI_SearchTests.swift */,
+				EDE13A972C2241EB00974183 /* Rest */,
 			);
 			path = "MELI SearchTests";
 			sourceTree = "<group>";
@@ -133,6 +141,31 @@
 				EDE13A802C214B0400974183 /* MELI_SearchUITestsLaunchTests.swift */,
 			);
 			path = "MELI SearchUITests";
+			sourceTree = "<group>";
+		};
+		EDE13A8D2C22415900974183 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				EDE13A8E2C22415900974183 /* MeliBRApiHelper.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		EDE13A942C2241BE00974183 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				EDE13A952C2241BE00974183 /* HttpClient.swift */,
+			);
+			path = Rest;
+			sourceTree = "<group>";
+		};
+		EDE13A972C2241EB00974183 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				EDE13A982C2241EB00974183 /* WhenRequestedItemsFromSearch.swift */,
+				EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */,
+			);
+			path = Rest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +300,8 @@
 			files = (
 				EDE13A632C214B0300974183 /* MELI_Search.xcdatamodeld in Sources */,
 				EDE13A5E2C214B0300974183 /* MELI_SearchApp.swift in Sources */,
+				EDE13A962C2241BE00974183 /* HttpClient.swift in Sources */,
+				EDE13A902C22415900974183 /* MeliBRApiHelper.swift in Sources */,
 				EDE13A652C214B0300974183 /* ContentView.swift in Sources */,
 				EDE13A602C214B0300974183 /* Persistence.swift in Sources */,
 			);
@@ -276,7 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE13A752C214B0400974183 /* MELI_SearchTests.swift in Sources */,
+				EDE13A9A2C2241EB00974183 /* WhenRequestedItemsFromSearch.swift in Sources */,
+				EDE13A9B2C2241EB00974183 /* WhenRequestedItemsFromCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
