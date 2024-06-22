@@ -11,6 +11,7 @@ import XCTest
 final class WhenRequestedItemsFromCategory: XCTestCase {
 
     var httpClient: HttpClient!
+    var itemsService: MeliItemsService!
     var request: URLRequest!
     let categoryId = "MLB1367"
     
@@ -18,6 +19,7 @@ final class WhenRequestedItemsFromCategory: XCTestCase {
         httpClient = URLSession.shared
         let categoriesURL = MeliBRApiHelper.getCategorySearchURL(withCategoryId: categoryId)!
         request = URLRequest(url: categoriesURL)
+        itemsService = MeliItemsService(httpClient: httpClient)
     }
     
     override func tearDownWithError() throws {
@@ -31,6 +33,21 @@ final class WhenRequestedItemsFromCategory: XCTestCase {
             case .success(let success):
                 XCTAssertNotNil(success.data)
                 XCTAssertEqual(success.httpResponse.statusCode, 200)
+            case .failure(let failure):
+                XCTFail("An error occured while fetching API: \(failure.localizedDescription)")
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testFetchItemsOfCategorySuccess() throws {
+        let expectation = self.expectation(description: "Items fetched successfully from category")
+        itemsService.getItemsByCategory(withCategoryId: categoryId) { result in
+            switch result {
+            case .success(let items):
+                XCTAssertFalse(items.isEmpty)
+                print(items)
             case .failure(let failure):
                 XCTFail("An error occured while fetching API: \(failure.localizedDescription)")
             }

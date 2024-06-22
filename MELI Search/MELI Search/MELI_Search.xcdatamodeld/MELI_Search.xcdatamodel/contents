@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ItemAttributesDTO" representedClassName="ItemAttributesDTO" syncable="YES" codeGenerationType="class">
+        <attribute name="attributeId" optional="YES" attributeType="String"/>
+        <attribute name="attributeName" optional="YES" attributeType="String"/>
+        <attribute name="attributeValue" optional="YES" attributeType="String"/>
+        <relationship name="itemId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeliItemDTO" inverseName="attributes_" inverseEntity="MeliItemDTO"/>
     </entity>
-    <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-    </elements>
+    <entity name="ItemInstallmentsDTO" representedClassName="ItemInstallmentsDTO" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currencyId" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="itemId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeliItemDTO" inverseName="installments" inverseEntity="MeliItemDTO"/>
+    </entity>
+    <entity name="MeliItemDTO" representedClassName="MeliItemDTO" syncable="YES" codeGenerationType="class">
+        <attribute name="acceptsMercadopago" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="availableQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="currencyId" optional="YES" attributeType="String"/>
+        <attribute name="itemId" optional="YES" attributeType="String"/>
+        <attribute name="permalink" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="attributes_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemAttributesDTO" inverseName="itemId" inverseEntity="ItemAttributesDTO"/>
+        <relationship name="installments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemInstallmentsDTO" inverseName="itemId" inverseEntity="ItemInstallmentsDTO"/>
+        <relationship name="shipping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShippingDetailsDTO" inverseName="itemId" inverseEntity="ShippingDetailsDTO"/>
+    </entity>
+    <entity name="ShippingDetailsDTO" representedClassName="ShippingDetailsDTO" syncable="YES" codeGenerationType="class">
+        <attribute name="freeShipping" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="storePickUp" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="itemId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MeliItemDTO" inverseName="shipping" inverseEntity="MeliItemDTO"/>
+    </entity>
 </model>
