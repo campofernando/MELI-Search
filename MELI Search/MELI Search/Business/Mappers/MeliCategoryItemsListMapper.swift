@@ -9,7 +9,7 @@ import Foundation
 
 struct MeliItemsListMapper {
     
-    static func map(data: Data?, response: HTTPURLResponse) throws -> [MelItem] {
+    static func map(data: Data?, response: HTTPURLResponse) throws -> [MeliItem] {
         if response.statusCode == 200 {
             guard let data else {
                 return []

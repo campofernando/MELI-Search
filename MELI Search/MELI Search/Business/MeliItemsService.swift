@@ -1,5 +1,5 @@
 //
-//  MELItemsService.swift
+//  MeliItemsService.swift
 //  MELI Search
 //
 //  Created by Fernando Campo Garcia on 17/06/24.
@@ -14,7 +14,7 @@ struct MeliItemsService {
         self.httpClient = httpClient
     }
     
-    func getItemsByCategory(withCategoryId categoryId: String, completion: @escaping (Result<[MelItem], Error>) -> Void) {
+    func getItemsByCategory(withCategoryId categoryId: String, completion: @escaping (Result<[MeliItem], Error>) -> Void) {
         guard let url = MeliBRApiHelper.getCategorySearchURL(withCategoryId: categoryId) else {
             completion(.failure(URLSession.InvalidURLRequestError()))
             return
@@ -22,7 +22,7 @@ struct MeliItemsService {
         performRequest(url: url, completion: completion)
     }
     
-    func getItemsBySearch(searchText: String, completion: @escaping (Result<[MelItem], Error>) -> Void) {
+    func getItemsBySearch(searchText: String, completion: @escaping (Result<[MeliItem], Error>) -> Void) {
         guard let url = MeliBRApiHelper.getItemsSearchURL(withText: searchText) else {
             completion(.failure(URLSession.InvalidURLRequestError()))
             return
@@ -30,7 +30,7 @@ struct MeliItemsService {
         performRequest(url: url, completion: completion)
     }
     
-    private func performRequest(url: URL, completion: @escaping (Result<[MelItem], Error>) -> Void) {
+    private func performRequest(url: URL, completion: @escaping (Result<[MeliItem], Error>) -> Void) {
         let request = URLRequest(url: url)
         httpClient.performRequest(request: request) { result in
             switch result {

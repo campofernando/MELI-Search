@@ -41,7 +41,7 @@ struct ItemInstallments: Codable {
     }
 }
 
-struct MelItem: Codable {
+struct MeliItem: Codable {
     let itemId: String?
     let title: String?
     let permalink: String?
@@ -66,5 +66,5 @@ struct MelItem: Codable {
 }
 
 struct ItemsResponse: Codable {
-    let results: [MelItem]
+    let results: [MeliItem]
 }
