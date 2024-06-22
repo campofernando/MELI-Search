@@ -19,6 +19,9 @@
 		EDE13A962C2241BE00974183 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A952C2241BE00974183 /* HttpClient.swift */; };
 		EDE13A9A2C2241EB00974183 /* WhenRequestedItemsFromSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A982C2241EB00974183 /* WhenRequestedItemsFromSearch.swift */; };
 		EDE13A9B2C2241EB00974183 /* WhenRequestedItemsFromCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */; };
+		EDE13A9D2C224A8B00974183 /* MeliItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A9C2C224A8B00974183 /* MeliItemsService.swift */; };
+		EDE13A9F2C224C2700974183 /* MeliItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A9E2C224C2700974183 /* MeliItem.swift */; };
+		EDE13AA22C2258CD00974183 /* MeliCategoryItemsListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13AA12C2258CD00974183 /* MeliCategoryItemsListMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		EDE13A952C2241BE00974183 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		EDE13A982C2241EB00974183 /* WhenRequestedItemsFromSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhenRequestedItemsFromSearch.swift; sourceTree = "<group>"; };
 		EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhenRequestedItemsFromCategory.swift; sourceTree = "<group>"; };
+		EDE13A9C2C224A8B00974183 /* MeliItemsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeliItemsService.swift; sourceTree = "<group>"; };
+		EDE13A9E2C224C2700974183 /* MeliItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliItem.swift; sourceTree = "<group>"; };
+		EDE13AA12C2258CD00974183 /* MeliCategoryItemsListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliCategoryItemsListMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,9 @@
 		EDE13A8D2C22415900974183 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				EDE13AA32C226C7A00974183 /* Models */,
+				EDE13AA02C22589C00974183 /* Mappers */,
+				EDE13A9C2C224A8B00974183 /* MeliItemsService.swift */,
 				EDE13A8E2C22415900974183 /* MeliBRApiHelper.swift */,
 			);
 			path = Business;
@@ -166,6 +175,22 @@
 				EDE13A992C2241EB00974183 /* WhenRequestedItemsFromCategory.swift */,
 			);
 			path = Rest;
+			sourceTree = "<group>";
+		};
+		EDE13AA02C22589C00974183 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				EDE13AA12C2258CD00974183 /* MeliCategoryItemsListMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		EDE13AA32C226C7A00974183 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDE13A9E2C224C2700974183 /* MeliItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +329,9 @@
 				EDE13A902C22415900974183 /* MeliBRApiHelper.swift in Sources */,
 				EDE13A652C214B0300974183 /* ContentView.swift in Sources */,
 				EDE13A602C214B0300974183 /* Persistence.swift in Sources */,
+				EDE13A9F2C224C2700974183 /* MeliItem.swift in Sources */,
+				EDE13AA22C2258CD00974183 /* MeliCategoryItemsListMapper.swift in Sources */,
+				EDE13A9D2C224A8B00974183 /* MeliItemsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import XCTest
 final class WhenRequestedItemsFromSearch: XCTestCase {
 
     var httpClient: HttpClient!
+    var itemsService: MeliItemsService!
     var request: URLRequest!
     let searchText = "Motorola%20G6"
     
@@ -18,19 +19,35 @@ final class WhenRequestedItemsFromSearch: XCTestCase {
         httpClient = URLSession.shared
         let searchItemsURL = MeliBRApiHelper.getItemsSearchURL(withText: searchText)!
         request = URLRequest(url: searchItemsURL)
+        itemsService = MeliItemsService(httpClient: httpClient)
     }
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testRequestItemsOfCategorySuccess() throws {
+    func testRequestItemsOfSearchSuccess() throws {
         let expectation = self.expectation(description: "Items fetched successfully from category")
         httpClient.performRequest(request: request) { result in
             switch result {
             case .success(let success):
                 XCTAssertNotNil(success.data)
                 XCTAssertEqual(success.httpResponse.statusCode, 200)
+            case .failure(let failure):
+                XCTFail("An error occured while fetching API: \(failure.localizedDescription)")
+            }
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
+    }
+
+    func testFetchItemsOfSearchSuccess() throws {
+        let expectation = self.expectation(description: "Items fetched successfully from category")
+        itemsService.getItemsBySearch(searchText: searchText) { result in
+            switch result {
+            case .success(let items):
+                XCTAssertFalse(items.isEmpty)
+                print(items)
             case .failure(let failure):
                 XCTFail("An error occured while fetching API: \(failure.localizedDescription)")
             }
