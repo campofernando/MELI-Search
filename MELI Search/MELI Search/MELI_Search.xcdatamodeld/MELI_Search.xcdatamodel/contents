@@ -16,6 +16,7 @@
     <entity name="MeliItemDTO" representedClassName="MeliItemDTO" syncable="YES" codeGenerationType="class">
         <attribute name="acceptsMercadopago" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="availableQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="categoryId" optional="YES" attributeType="String"/>
         <attribute name="currencyId" optional="YES" attributeType="String"/>
         <attribute name="itemId" optional="YES" attributeType="String"/>
         <attribute name="permalink" optional="YES" attributeType="String"/>

@@ -44,6 +44,7 @@ struct ItemInstallments: Codable {
 struct MeliItem: Codable {
     let itemId: String?
     let title: String?
+    let categoryId: String?
     let permalink: String?
     let thumbnail: String?
     let currencyId: String?
@@ -57,6 +58,7 @@ struct MeliItem: Codable {
     enum CodingKeys: String, CodingKey {
         case itemId = "id"
         case title, permalink, thumbnail
+        case categoryId = "category_id"
         case currencyId = "currency_id"
         case price
         case availableQuantity = "available_quantity"

@@ -10,7 +10,6 @@ import CoreData
 
 struct MeliSearchDataService {
     let context: NSManagedObjectContext
-    private let entityName = "MeliItemDTO"
     
     init(context: NSManagedObjectContext) {
         self.context = context
@@ -35,14 +34,20 @@ struct MeliSearchDataService {
         guard let itemId else {
             return nil
         }
-        let request = NSFetchRequest<MeliItemDTO>(entityName: entityName)
+        let request = NSFetchRequest<MeliItemDTO>(entityName: MeliItemDTO.entityName)
         request.predicate = NSPredicate(format: "itemId = %@", itemId)
         return try context.fetch(request).first
     }
     
     func fetchItems() throws -> [MeliItemDTO] {
-        let request = NSFetchRequest<MeliItemDTO>(entityName: entityName)
+        let request = NSFetchRequest<MeliItemDTO>(entityName: MeliItemDTO.entityName)
         request.sortDescriptors = [NSSortDescriptor(key: "price", ascending: true)]
+        return try context.fetch(request)
+    }
+    
+    func fetchItems(ofCategory category: String) throws -> [MeliItemDTO] {
+        let request = NSFetchRequest<MeliItemDTO>(entityName: MeliItemDTO.entityName)
+        request.predicate = NSPredicate(format: "categoryId = %@", category)
         return try context.fetch(request)
     }
     

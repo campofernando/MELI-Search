@@ -26,6 +26,10 @@ enum MeliBRApiHelper {
     
     static func getItemsSearchURL(withText text: String) -> URL? {
         let searchItemsPath = domain + site + getItemsSearchPath(withText: text)
-        return URL(string: searchItemsPath)
+        guard let searchItemsURLString = searchItemsPath
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return nil
+        }
+        return URL(string: searchItemsURLString)
     }
 }
