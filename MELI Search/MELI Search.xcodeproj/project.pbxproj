@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED83347C2C28AD0000852736 /* MeliSearchInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED83347B2C28AD0000852736 /* MeliSearchInfo.plist */; };
+		ED83347E2C28B22F00852736 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83347D2C28B22F00852736 /* ItemCard.swift */; };
+		ED8334802C28BB5100852736 /* MeliItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83347F2C28BB5100852736 /* MeliItemCard.swift */; };
 		ED8BA0C72C27295000FE229A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0C62C27295000FE229A /* Persistence.swift */; };
 		ED8BA0E32C27296C00FE229A /* ItemInstallments+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0DA2C27296C00FE229A /* ItemInstallments+Persistence.swift */; };
 		ED8BA0E42C27296C00FE229A /* ShippingDetails+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0DC2C27296C00FE229A /* ShippingDetails+Persistence.swift */; };
@@ -25,6 +28,8 @@
 		EDD4E8192C287DE10016B54C /* MeliIemDescriptionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4E8182C287DE10016B54C /* MeliIemDescriptionMapper.swift */; };
 		EDD4E81B2C287F360016B54C /* WhenRequestItemDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4E81A2C287F360016B54C /* WhenRequestItemDescription.swift */; };
 		EDD4E81D2C2881A20016B54C /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4E81C2C2881A20016B54C /* ItemDetailsView.swift */; };
+		EDD4E8212C288EA80016B54C /* FileDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4E8202C288EA80016B54C /* FileDownloadService.swift */; };
+		EDD4E8252C2890E70016B54C /* FileDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4E8242C2890E70016B54C /* FileDownloadManager.swift */; };
 		EDD9EE832C27320E00A6ED53 /* MeliSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EE822C27320E00A6ED53 /* MeliSearch.swift */; };
 		EDE13A5E2C214B0300974183 /* MELI_SearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A5D2C214B0300974183 /* MELI_SearchApp.swift */; };
 		EDE13A632C214B0300974183 /* MELI_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDE13A612C214B0300974183 /* MELI_Search.xcdatamodeld */; };
@@ -60,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED83347B2C28AD0000852736 /* MeliSearchInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MeliSearchInfo.plist; sourceTree = "<group>"; };
+		ED83347D2C28B22F00852736 /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
+		ED83347F2C28BB5100852736 /* MeliItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliItemCard.swift; sourceTree = "<group>"; };
 		ED8BA0C62C27295000FE229A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ED8BA0DA2C27296C00FE229A /* ItemInstallments+Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemInstallments+Persistence.swift"; sourceTree = "<group>"; };
 		ED8BA0DC2C27296C00FE229A /* ShippingDetails+Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShippingDetails+Persistence.swift"; sourceTree = "<group>"; };
@@ -78,6 +86,8 @@
 		EDD4E8182C287DE10016B54C /* MeliIemDescriptionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliIemDescriptionMapper.swift; sourceTree = "<group>"; };
 		EDD4E81A2C287F360016B54C /* WhenRequestItemDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenRequestItemDescription.swift; sourceTree = "<group>"; };
 		EDD4E81C2C2881A20016B54C /* ItemDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
+		EDD4E8202C288EA80016B54C /* FileDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadService.swift; sourceTree = "<group>"; };
+		EDD4E8242C2890E70016B54C /* FileDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadManager.swift; sourceTree = "<group>"; };
 		EDD9EE822C27320E00A6ED53 /* MeliSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeliSearch.swift; sourceTree = "<group>"; };
 		EDE13A5A2C214B0300974183 /* MELI Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MELI Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE13A5D2C214B0300974183 /* MELI_SearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MELI_SearchApp.swift; sourceTree = "<group>"; };
@@ -199,10 +209,13 @@
 			isa = PBXGroup;
 			children = (
 				EDD4E8092C27E7400016B54C /* SearchBar.swift */,
+				ED83347F2C28BB5100852736 /* MeliItemCard.swift */,
+				ED83347D2C28B22F00852736 /* ItemCard.swift */,
 				EDE13A642C214B0300974183 /* HomeView.swift */,
 				EDD4E8012C27BA010016B54C /* SearchResultsView.swift */,
 				EDD4E81C2C2881A20016B54C /* ItemDetailsView.swift */,
 				EDD4E8032C27C2420016B54C /* MeliSearchViewModel.swift */,
+				EDE13A662C214B0400974183 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +223,7 @@
 		EDE13A512C214B0300974183 = {
 			isa = PBXGroup;
 			children = (
+				ED83347B2C28AD0000852736 /* MeliSearchInfo.plist */,
 				EDE13A5C2C214B0300974183 /* MELI Search */,
 				EDE13A732C214B0400974183 /* MELI SearchTests */,
 				EDE13A7D2C214B0400974183 /* MELI SearchUITests */,
@@ -235,7 +249,6 @@
 				EDE13A942C2241BE00974183 /* Rest */,
 				EDE13A8D2C22415900974183 /* Business */,
 				EDD9EE862C27822800A6ED53 /* View */,
-				EDE13A662C214B0400974183 /* Assets.xcassets */,
 				EDE13A682C214B0400974183 /* MELI_Search.entitlements */,
 				EDE13A612C214B0300974183 /* MELI_Search.xcdatamodeld */,
 				EDE13A692C214B0400974183 /* Preview Content */,
@@ -274,12 +287,13 @@
 			isa = PBXGroup;
 			children = (
 				EDD9EE822C27320E00A6ED53 /* MeliSearch.swift */,
-				ED8BA0F12C272ACA00FE229A /* Mocks */,
 				ED8BA0EF2C272AB000FE229A /* MeliSearchDataService.swift */,
-				EDE13AA32C226C7A00974183 /* Models */,
-				EDE13AA02C22589C00974183 /* Mappers */,
 				EDE13A9C2C224A8B00974183 /* MeliItemsService.swift */,
 				EDE13A8E2C22415900974183 /* MeliBRApiHelper.swift */,
+				EDD4E8242C2890E70016B54C /* FileDownloadManager.swift */,
+				ED8BA0F12C272ACA00FE229A /* Mocks */,
+				EDE13AA32C226C7A00974183 /* Models */,
+				EDE13AA02C22589C00974183 /* Mappers */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -288,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE13A952C2241BE00974183 /* HttpClient.swift */,
+				EDD4E8202C288EA80016B54C /* FileDownloadService.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -427,6 +442,7 @@
 				EDE13A6B2C214B0400974183 /* Preview Assets.xcassets in Resources */,
 				ED8BA0F42C272ACA00FE229A /* MeliItemMock.json in Resources */,
 				EDE13A672C214B0400974183 /* Assets.xcassets in Resources */,
+				ED83347C2C28AD0000852736 /* MeliSearchInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,11 +485,15 @@
 				ED8BA0F52C272ACA00FE229A /* MeliItem+Mock.swift in Sources */,
 				EDE13A9F2C224C2700974183 /* MeliItem.swift in Sources */,
 				EDE13AA22C2258CD00974183 /* MeliItemsListMapper.swift in Sources */,
+				EDD4E8252C2890E70016B54C /* FileDownloadManager.swift in Sources */,
 				ED8BA0E52C27296C00FE229A /* ItemAttributes+Persistence.swift in Sources */,
 				EDD4E8192C287DE10016B54C /* MeliIemDescriptionMapper.swift in Sources */,
 				EDE13A9D2C224A8B00974183 /* MeliItemsService.swift in Sources */,
+				ED83347E2C28B22F00852736 /* ItemCard.swift in Sources */,
+				EDD4E8212C288EA80016B54C /* FileDownloadService.swift in Sources */,
 				EDD4E81D2C2881A20016B54C /* ItemDetailsView.swift in Sources */,
 				ED8BA0E32C27296C00FE229A /* ItemInstallments+Persistence.swift in Sources */,
+				ED8334802C28BB5100852736 /* MeliItemCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +586,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -618,6 +639,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -636,6 +658,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeliSearchInfo.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -651,6 +674,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.campofernando594.MELI-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -674,6 +698,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeliSearchInfo.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -689,6 +714,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.campofernando594.MELI-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

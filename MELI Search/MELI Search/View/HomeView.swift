@@ -24,17 +24,10 @@ struct HomeView: View {
                     }
                 )
                 List(viewModel.defaultCategoryItems, id: \.itemId) { item in
-                    if let itemId = item.itemId, let title = item.title {
-                        NavigationLink(title) {
-                            ItemDetailsView(
-                                viewModel: viewModel,
-                                title: title,
-                                itemId: itemId
-                            )
-                        }
-                    }
+                    ItemCard(item: item, parentViewModel: viewModel)
                 }
                 .listStyle(PlainListStyle())
+                .padding()
             }
             .alert(viewModel.modalErrorText ?? "Mercado Livre",
                    isPresented: $viewModel.isShowingModal,
@@ -46,6 +39,7 @@ struct HomeView: View {
         }
         .listStyle(PlainListStyle())
         .navigationBarTitle("Mercado Livre")
+        .background(Color.yellow)
     }
 }
 
