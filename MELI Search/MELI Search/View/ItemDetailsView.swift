@@ -12,10 +12,15 @@ struct ItemDetailsView: View {
     
     let title: String
     let itemId: String
+    let itemPath: String?
     
     var body: some View {
         VStack {
             Text(title)
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .padding()
+            }
             ScrollView {
                 Text(viewModel.itemDescription)
             }
@@ -23,6 +28,7 @@ struct ItemDetailsView: View {
         .padding()
         .onAppear {
             viewModel.getItemDescription(withId: itemId)
+            viewModel.downloadImageforItem(atPath: itemPath)
         }
     }
 }
@@ -40,7 +46,8 @@ struct ItemDetailsView_Previews: PreviewProvider {
                 )
             ),
             title: "Mesa de jantar",
-            itemId: "MLB2040426998"
+            itemId: "MLB2040426998",
+            itemPath: "http://http2.mlstatic.com/D_635693-MLU72749098569_112023-I.jpg"
         )
     }
 }

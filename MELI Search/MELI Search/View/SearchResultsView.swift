@@ -19,7 +19,8 @@ struct SearchResultsView: View {
                         ItemDetailsView(
                             viewModel: viewModel,
                             title: title,
-                            itemId: itemId
+                            itemId: itemId,
+                            itemPath: item.thumbnail
                         )
                     }
                 }
