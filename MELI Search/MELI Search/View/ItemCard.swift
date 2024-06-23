@@ -27,21 +27,24 @@ struct ItemCard: View {
                     Image(uiImage: image)
                         .padding()
                 }
-                NavigationLink(title) {
-                    ItemDetailsView(
-                        viewModel: parentViewModel,
-                        title: title,
-                        itemId: itemId,
-                        itemPath: item.thumbnail
-                    )
+                VStack {
+                    NavigationLink(title) {
+                        ItemDetailsView(
+                            viewModel: parentViewModel,
+                            title: title,
+                            itemId: itemId,
+                            itemPath: item.thumbnail,
+                            price: item.price
+                        )
+                    }
+                    if let price = item.price {
+                        Text("Preço: R$ \(String(format: "%.2f", price))")
+                            .foregroundColor(.blue)
+                            .bold()
+                    }
                 }
+                
             }
         }
     }
 }
-
-//struct ItemCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ItemCard()
-//    }
-//}

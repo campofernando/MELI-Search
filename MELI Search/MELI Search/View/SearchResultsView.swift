@@ -23,6 +23,7 @@ struct SearchResultsView: View {
             }
             .listStyle(PlainListStyle())
         }
+        .background(Color.yellow)
         .navigationBarTitle("Mercado Livre")
         .onAppear {
             viewModel.searchItems(withText: searchText)

@@ -27,6 +27,7 @@ struct HomeView: View {
                     ItemCard(item: item, parentViewModel: viewModel)
                 }
                 .listStyle(PlainListStyle())
+                .padding()
             }
             .alert(viewModel.modalErrorText ?? "Mercado Livre",
                    isPresented: $viewModel.isShowingModal,
@@ -38,6 +39,7 @@ struct HomeView: View {
         }
         .listStyle(PlainListStyle())
         .navigationBarTitle("Mercado Livre")
+        .background(Color.yellow)
     }
 }
 

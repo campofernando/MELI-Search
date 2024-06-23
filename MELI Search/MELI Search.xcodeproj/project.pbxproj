@@ -209,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				EDD4E8092C27E7400016B54C /* SearchBar.swift */,
-				ED83347D2C28B22F00852736 /* ItemCard.swift */,
 				ED83347F2C28BB5100852736 /* MeliItemCard.swift */,
+				ED83347D2C28B22F00852736 /* ItemCard.swift */,
 				EDE13A642C214B0300974183 /* HomeView.swift */,
 				EDD4E8012C27BA010016B54C /* SearchResultsView.swift */,
 				EDD4E81C2C2881A20016B54C /* ItemDetailsView.swift */,

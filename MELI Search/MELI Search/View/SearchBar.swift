@@ -23,12 +23,16 @@ struct SearchBar: View {
                 }
             )
             .textFieldStyle(.roundedBorder)
+            .cornerRadius(25)
             .padding()
             
             NavigationLink("Ir") {
                 destination(searchText)
             }
+            .foregroundColor(.blue)
+            .padding()
         }
+        .background(Color.yellow)
     }
 }
 
