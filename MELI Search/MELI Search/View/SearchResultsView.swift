@@ -11,19 +11,15 @@ struct SearchResultsView: View {
     @ObservedObject var viewModel: MeliSearchViewModel
     var searchText: String
     
+    init(viewModel: MeliSearchViewModel, searchText: String) {
+        self.viewModel = viewModel
+        self.searchText = searchText
+    }
+    
     var body: some View {
         NavigationStack {
             List(viewModel.searchResultItems, id: \.itemId) { item in
-                if let itemId = item.itemId, let title = item.title {
-                    NavigationLink(title) {
-                        ItemDetailsView(
-                            viewModel: viewModel,
-                            title: title,
-                            itemId: itemId,
-                            itemPath: item.thumbnail
-                        )
-                    }
-                }
+                ItemCard(item: item, parentViewModel: viewModel)
             }
             .listStyle(PlainListStyle())
         }

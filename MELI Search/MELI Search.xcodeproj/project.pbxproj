@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED83347C2C28AD0000852736 /* MeliSearchInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED83347B2C28AD0000852736 /* MeliSearchInfo.plist */; };
+		ED83347E2C28B22F00852736 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83347D2C28B22F00852736 /* ItemCard.swift */; };
+		ED8334802C28BB5100852736 /* MeliItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83347F2C28BB5100852736 /* MeliItemCard.swift */; };
 		ED8BA0C72C27295000FE229A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0C62C27295000FE229A /* Persistence.swift */; };
 		ED8BA0E32C27296C00FE229A /* ItemInstallments+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0DA2C27296C00FE229A /* ItemInstallments+Persistence.swift */; };
 		ED8BA0E42C27296C00FE229A /* ShippingDetails+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BA0DC2C27296C00FE229A /* ShippingDetails+Persistence.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		ED83347B2C28AD0000852736 /* MeliSearchInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MeliSearchInfo.plist; sourceTree = "<group>"; };
+		ED83347D2C28B22F00852736 /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
+		ED83347F2C28BB5100852736 /* MeliItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliItemCard.swift; sourceTree = "<group>"; };
 		ED8BA0C62C27295000FE229A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ED8BA0DA2C27296C00FE229A /* ItemInstallments+Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemInstallments+Persistence.swift"; sourceTree = "<group>"; };
 		ED8BA0DC2C27296C00FE229A /* ShippingDetails+Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShippingDetails+Persistence.swift"; sourceTree = "<group>"; };
@@ -205,10 +209,13 @@
 			isa = PBXGroup;
 			children = (
 				EDD4E8092C27E7400016B54C /* SearchBar.swift */,
+				ED83347D2C28B22F00852736 /* ItemCard.swift */,
+				ED83347F2C28BB5100852736 /* MeliItemCard.swift */,
 				EDE13A642C214B0300974183 /* HomeView.swift */,
 				EDD4E8012C27BA010016B54C /* SearchResultsView.swift */,
 				EDD4E81C2C2881A20016B54C /* ItemDetailsView.swift */,
 				EDD4E8032C27C2420016B54C /* MeliSearchViewModel.swift */,
+				EDE13A662C214B0400974183 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,7 +249,6 @@
 				EDE13A942C2241BE00974183 /* Rest */,
 				EDE13A8D2C22415900974183 /* Business */,
 				EDD9EE862C27822800A6ED53 /* View */,
-				EDE13A662C214B0400974183 /* Assets.xcassets */,
 				EDE13A682C214B0400974183 /* MELI_Search.entitlements */,
 				EDE13A612C214B0300974183 /* MELI_Search.xcdatamodeld */,
 				EDE13A692C214B0400974183 /* Preview Content */,
@@ -483,9 +489,11 @@
 				ED8BA0E52C27296C00FE229A /* ItemAttributes+Persistence.swift in Sources */,
 				EDD4E8192C287DE10016B54C /* MeliIemDescriptionMapper.swift in Sources */,
 				EDE13A9D2C224A8B00974183 /* MeliItemsService.swift in Sources */,
+				ED83347E2C28B22F00852736 /* ItemCard.swift in Sources */,
 				EDD4E8212C288EA80016B54C /* FileDownloadService.swift in Sources */,
 				EDD4E81D2C2881A20016B54C /* ItemDetailsView.swift in Sources */,
 				ED8BA0E32C27296C00FE229A /* ItemInstallments+Persistence.swift in Sources */,
+				ED8334802C28BB5100852736 /* MeliItemCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

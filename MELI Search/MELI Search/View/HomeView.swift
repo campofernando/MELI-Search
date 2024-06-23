@@ -24,16 +24,7 @@ struct HomeView: View {
                     }
                 )
                 List(viewModel.defaultCategoryItems, id: \.itemId) { item in
-                    if let itemId = item.itemId, let title = item.title {
-                        NavigationLink(title) {
-                            ItemDetailsView(
-                                viewModel: viewModel,
-                                title: title,
-                                itemId: itemId,
-                                itemPath: item.thumbnail
-                            )
-                        }
-                    }
+                    ItemCard(item: item, parentViewModel: viewModel)
                 }
                 .listStyle(PlainListStyle())
             }

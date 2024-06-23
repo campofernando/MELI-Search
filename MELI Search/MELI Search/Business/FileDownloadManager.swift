@@ -14,7 +14,7 @@ protocol FileDownloadManagerDelegate: NSObject {
 class FileDownloadManager: NSObject {
     private var itemPath: String?
     private let downloadService = FileDownloadService()
-    private weak var delegate: FileDownloadManagerDelegate!
+    private weak var delegate: FileDownloadManagerDelegate?
     
     init(delegate: FileDownloadManagerDelegate) {
         self.delegate = delegate
@@ -33,7 +33,7 @@ class FileDownloadManager: NSObject {
 
 extension FileDownloadManager: FileDownloadServiceDelegate {
     func onDownloadError(error: Error) {
-        delegate.onDownloadCompleted(result: .failure(error))
+        delegate?.onDownloadCompleted(result: .failure(error))
     }
     
     func urlSession(_ session: URLSession,
@@ -51,7 +51,7 @@ extension FileDownloadManager: FileDownloadServiceDelegate {
                 try FileManager.default.removeItem(atPath: localDestinationUrl.relativePath)
             }
             try FileManager.default.moveItem(at: location, to: localDestinationUrl)
-            delegate.onDownloadCompleted(result: .success(localDestinationUrl))
+            delegate?.onDownloadCompleted(result: .success(localDestinationUrl))
         } catch {
             onDownloadError(error: error)
         }
