@@ -9,6 +9,11 @@ import Foundation
 import CoreData
 
 extension ShippingDetails {
+    init(managedObject: ShippingDetailsDTO) {
+        self.storePickUp = managedObject.storePickUp
+        self.freeShipping = managedObject.freeShipping
+    }
+    
     func managedObject(context: NSManagedObjectContext) -> ShippingDetailsDTO {
         let managedObject = ShippingDetailsDTO(context: context)
         managedObject.storePickUp = self.storePickUp ?? false

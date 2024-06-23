@@ -9,6 +9,12 @@ import Foundation
 import CoreData
 
 extension ItemAttributes {
+    init(managedObject: ItemAttributesDTO) {
+        self.attributeId = managedObject.attributeId
+        self.attributeName = managedObject.attributeName
+        self.attributeValue = managedObject.attributeValue
+    }
+    
     func managedObject(context: NSManagedObjectContext) -> ItemAttributesDTO {
         let managedObject = ItemAttributesDTO(context: context)
         managedObject.attributeId = self.attributeId

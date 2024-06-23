@@ -17,10 +17,11 @@ extension MeliItem {
         return items.results
     }
     
-    func getMock(withId id: String?) -> MeliItem{
+    func getMock(withId id: String?) -> MeliItem {
         return MeliItem(
             itemId: id,
             title: title,
+            categoryId: categoryId,
             permalink: permalink,
             thumbnail: thumbnail,
             currencyId: currencyId,
