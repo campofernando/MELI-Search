@@ -32,4 +32,13 @@ enum MeliBRApiHelper {
         }
         return URL(string: searchItemsURLString)
     }
+    
+    static func getItemDescriptionPath(itemId: String) -> String {
+        return "items/\(itemId)/description"
+    }
+    
+    static func getItemDescriptionURL(itemId: String) -> URL? {
+        let path = domain + getItemDescriptionPath(itemId: itemId)
+        return URL(string: path)
+    }
 }

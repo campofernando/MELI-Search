@@ -1,5 +1,5 @@
 //
-//  MeliCategoryItemsListMapper.swift
+//  MeliItemsListMapper.swift
 //  MELI Search
 //
 //  Created by Fernando Campo Garcia on 18/06/24.

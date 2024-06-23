@@ -46,4 +46,26 @@ struct MeliItemsService {
             }
         }
     }
+    
+    func getItemDescription(itemId: String, completion: @escaping (Result<MeliItemDescription, Error>) -> Void) {
+        guard let url = MeliBRApiHelper.getItemDescriptionURL(itemId: itemId) else {
+            completion(.failure(URLSession.InvalidURLRequestError()))
+            return
+        }
+        let request = URLRequest(url: url)
+        httpClient.performRequest(request: request) { result in
+            switch result {
+            case .success(let success):
+                do {
+                    let description = try MeliIemDescriptionMapper.map(data: success.data,
+                                                                       response: success.httpResponse)
+                    completion(.success(description))
+                } catch {
+                    completion(.failure(error))
+                }
+            case .failure(let failure):
+                completion(.failure(failure))
+            }
+        }
+    }
 }
