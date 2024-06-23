@@ -11,6 +11,7 @@ protocol MeliSearchProtocol {
     func loadDefaultItems(completion: @escaping (Result<[MeliItem], Error>) -> Void)
     func getLastSearches() -> Result<[String], Error>
     func searchItems(withText text: String, completion: @escaping (Result<[MeliItem], Error>) -> Void)
+    func getItemDescription(itemId: String, completion: @escaping (Result<String, Error>) -> Void)
 }
 
 struct MeliSearch: MeliSearchProtocol {
@@ -55,6 +56,21 @@ struct MeliSearch: MeliSearchProtocol {
                 }
             }
             completion(result)
+        }
+    }
+    
+    func getItemDescription(itemId: String, completion: @escaping (Result<String, Error>) -> Void) {
+        apiService.getItemDescription(itemId: itemId) { result in
+            switch result {
+            case .success(let description):
+                guard let text = description.plainText, !text.isEmpty else {
+                    completion(.failure(NSError(domain: "Unable to get items details", code: 1122)))
+                    return
+                }
+                completion(.success(text))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

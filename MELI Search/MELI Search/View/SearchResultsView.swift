@@ -13,9 +13,15 @@ struct SearchResultsView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.searchResultItems, id: \.itemId) { item in
-                    Text(item.itemId ?? "NANANINA")
+            List(viewModel.searchResultItems, id: \.itemId) { item in
+                if let itemId = item.itemId, let title = item.title {
+                    NavigationLink(title) {
+                        ItemDetailsView(
+                            viewModel: viewModel,
+                            title: title,
+                            itemId: itemId
+                        )
+                    }
                 }
             }
             .listStyle(PlainListStyle())

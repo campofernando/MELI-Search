@@ -27,4 +27,8 @@ struct MeliSearchMock: MeliSearchProtocol {
     func searchItems(withText text: String, completion: @escaping (Result<[MeliItem], Error>) -> Void) {
         completion(itemsResult)
     }
+    
+    func getItemDescription(itemId: String, completion: @escaping (Result<String, Error>) -> Void) {
+        completion(.success("Mesa de jantar com jogo completo"))
+    }
 }

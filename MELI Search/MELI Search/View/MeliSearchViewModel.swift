@@ -17,6 +17,7 @@ class MeliSearchViewModel: ObservableObject {
     @Published var recentlyViewedItems = [MeliItem]()
     @Published var searchResultItems = [MeliItem]()
     @Published var isShowingModal: Bool = false
+    @Published var itemDescription: String = ""
     
     var modalErrorText: String?
     
@@ -55,6 +56,17 @@ class MeliSearchViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self?.searchResultItems = items
                 }
+            case .failure(let error):
+                self?.onError(error: error)
+            }
+        }
+    }
+    
+    func getItemDescription(withId itemId: String) {
+        meliSearch.getItemDescription(itemId: itemId) { [weak self] result in
+            switch result {
+            case .success(let description):
+                self?.itemDescription = description
             case .failure(let error):
                 self?.onError(error: error)
             }

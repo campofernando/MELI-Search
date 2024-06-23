@@ -23,14 +23,18 @@ struct HomeView: View {
                         SearchResultsView(viewModel: viewModel, searchText: searchText)
                     }
                 )
-                
-                List {
-                    ForEach(viewModel.defaultCategoryItems, id: \.itemId) { item in
-                        if let itemId = item.itemId {
-                            Text(itemId)
+                List(viewModel.defaultCategoryItems, id: \.itemId) { item in
+                    if let itemId = item.itemId, let title = item.title {
+                        NavigationLink(title) {
+                            ItemDetailsView(
+                                viewModel: viewModel,
+                                title: title,
+                                itemId: itemId
+                            )
                         }
                     }
                 }
+                .listStyle(PlainListStyle())
             }
             .alert(viewModel.modalErrorText ?? "Mercado Livre",
                    isPresented: $viewModel.isShowingModal,
