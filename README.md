@@ -1,6 +1,9 @@
 # MELI-Search
 iOS App for demonstrating how to search items using MercadoLivre API
 
+![Simulator Screenshot - iPhone 14 - 2024-06-23 at 18 18 52](https://github.com/campofernando/MELI-Search/assets/86025148/e7d7c2c7-e91d-4a67-8ced-28c22ad88907) ![Simulator Screenshot - iPhone 14 - 2024-06-23 at 18 18 34](https://github.com/campofernando/MELI-Search/assets/86025148/cbe6d053-b88e-4692-aa00-faee614584fb) ![Simulator Screenshot - iPhone 14 - 2024-06-23 at 18 18 26](https://github.com/campofernando/MELI-Search/assets/86025148/25f23126-126e-45f0-8d58-74d7cf0c0404)
+
+
 # How it works
 The app starts loading the items of a "favorite" category, in this case antiquities. When the user enters a text for search, the app redirects him to a new list with the results for his search. In both lists the user can click on any item for seeing details of the product, i.e.: the price, an image and a description.
 
