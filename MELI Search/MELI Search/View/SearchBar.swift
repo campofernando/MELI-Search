@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchBar: View {
     @State var searchText: String = ""
+    @State private var navigate: Bool = false
     
     var onEditingChanged: (Bool) -> Void
     var destination: (String) -> SearchResultsView
@@ -20,17 +21,20 @@ struct SearchBar: View {
                 text: $searchText,
                 onEditingChanged: { isEditing in
                     onEditingChanged(isEditing)
+                },
+                onCommit: {
+                    navigate = true
                 }
             )
             .textFieldStyle(.roundedBorder)
             .cornerRadius(25)
             .padding()
             
-            NavigationLink("Ir") {
+            NavigationLink(isActive: $navigate) {
                 destination(searchText)
+            } label: {
+                EmptyView()
             }
-            .foregroundColor(.blue)
-            .padding()
         }
         .background(Color.yellow)
     }

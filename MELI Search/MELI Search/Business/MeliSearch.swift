@@ -63,11 +63,7 @@ struct MeliSearch: MeliSearchProtocol {
         apiService.getItemDescription(itemId: itemId) { result in
             switch result {
             case .success(let description):
-                guard let text = description.plainText, !text.isEmpty else {
-                    completion(.failure(NSError(domain: "Unable to get items details", code: 1122)))
-                    return
-                }
-                completion(.success(text))
+                completion(.success(description.plainText ?? ""))
             case .failure(let error):
                 completion(.failure(error))
             }

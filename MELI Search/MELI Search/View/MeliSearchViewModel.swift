@@ -37,7 +37,7 @@ class MeliSearchViewModel: NSObject, ObservableObject {
                     self?.defaultCategoryItems = items
                 }
             case .failure(let error):
-                fatalError(error.localizedDescription)
+                self?.onError(error: error)
             }
         }
     }
@@ -48,7 +48,7 @@ class MeliSearchViewModel: NSObject, ObservableObject {
         case .success(let searches):
             lastSearches = searches
         case .failure(let error):
-            fatalError(error.localizedDescription)
+            onError(error: error)
         }
     }
     
@@ -96,7 +96,7 @@ extension MeliSearchViewModel: FileDownloadManagerDelegate {
         case .success(let url):
             loadImage(fromLocalPath: url)
         case .failure(let error):
-            fatalError(error.localizedDescription)
+            onError(error: error)
         }
     }
     
@@ -104,8 +104,6 @@ extension MeliSearchViewModel: FileDownloadManagerDelegate {
         if FileManager.default.fileExists(atPath: imagePath.relativePath) {
             let loadedImage = UIImage(contentsOfFile: imagePath.relativePath)
             self.image = loadedImage
-        } else {
-            fatalError()
         }
     }
 }
